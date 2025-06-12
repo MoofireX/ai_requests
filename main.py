@@ -1,6 +1,9 @@
 import base64
 from google import generativeai as genai
 from flask import Flask, jsonify, request
+import os
+
+port = int(os.environ.get("PORT", 10000)
 
 genai.configure(api_key="AIzaSyBrl1diAZs34jZ1H5YlVvMMXSsNq1cnFDU")
 model = genai.GenerativeModel("gemini-pro-vision")
@@ -37,4 +40,4 @@ def index():
     return "Gemini API is running!"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=port)
