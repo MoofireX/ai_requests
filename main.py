@@ -3,7 +3,7 @@ from google import generativeai as genai
 from flask import Flask, jsonify, request
 import os
 
-port = int(os.environ.get("PORT", 10000)
+port = int(os.environ.get("PORT", 10000))
 
 genai.configure(api_key="AIzaSyBrl1diAZs34jZ1H5YlVvMMXSsNq1cnFDU")
 model = genai.GenerativeModel("gemini-pro-vision")
